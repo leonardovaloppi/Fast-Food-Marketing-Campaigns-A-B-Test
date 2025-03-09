@@ -27,16 +27,16 @@ It contains weekly sales performance data from the target **fast food locations*
 | *SalesInThousands* | sales amount for a specific LocationID, Promotion, and week |
 
 ## Methodology
-*(Step 1)* **Data aggregation on SQL** → count of location for each promotion, mean and standard deviation of their average weekly sales.  
-*(Step 2)* **Statistical test thourgh pairwise comparison** → Two-Sample T-Test *(α = 0.01)* to compare sales performance.
+*(Step 1)* **Data aggregation on SQL** → computing the necesary statistics for the T-test: sample size, mean and standard deviation  
+*(Step 2)* **Statistical test thourgh pairwise comparison** → performing Two-Sample T-Test *(α = 0.01)* to compare sales performance using the query results
 
 ### Hypothesis
-  - *H₀ (Null Hypothesis)* → No difference between promotions.  
-  - *H₁ (Alternative Hypothesis)* → At least one promotion performs better.
+  - *H₀ (Null Hypothesis)* → No difference between promotions 
+  - *H₁ (Alternative Hypothesis)* → At least one promotion performs better
 
 ## Key results 💡
-Promotion 1 significantly outperformed Promotion 2 *(p-value < 0.01)*.  
-At the same time, there is no significant difference between Promotion 1 & 3 and Promotion 2 & 3 *(p-values > 0.01)*.  
+Promotion 1 significantly outperformed Promotion 2 *(p-value < α)*.  
+At the same time, there is no significant difference between Promotion 1 & 3 and Promotion 2 & 3 *(p-values > α)*.  
 
 ### Business recommendations
 - Prioritize Promotion 1 as the most effective campaign.  
@@ -47,8 +47,11 @@ At the same time, there is no significant difference between Promotion 1 & 3 and
 
 ## Project files 🗂️
 
+- `FF-MC_Dataset.csv` → the original dataset from Kaggle *(comma-separated values file)*
+- `FF-MC_Extract_Data.sql` → SQL query for data aggregation and statistics calculation
+- `FF-MC_Report.docx` → Detailed report of the A/B test *(Microsoft Word file)*
 
-`Fast-Food_Extract_Data.sql` → SQL file to extract the data and organize it in multiple columns.
+Alternatively, the final report is available on [Google Docs.](https://docs.google.com/document/d/1FSBdIiwmmQis7YHOhfOzChHOFbhroFee0Npb5EqTnu4/edit?usp=sharing)
 
 ---
 
@@ -56,10 +59,9 @@ At the same time, there is no significant difference between Promotion 1 & 3 and
 
 | Tool | Purpose |
 |------|---------|
-| **SQL (BigQuery)** | Data extraction & transformation |
-| **Evan Miller A/B Test Calculator** | Hypothesis testing |
-| **Google Sheets** | Data storage & calculations |
-| **Google Docs** | Report writing |
+| **SQL (BigQuery)** | Data manipulation |
+| **[Evan Miller A/B Test Calculator](https://www.evanmiller.org/ab-testing/t-test.html)** | Hypothesis testing |
+| **Google Docs / Microsoft Word** | Report writing |
 
 ---
 
