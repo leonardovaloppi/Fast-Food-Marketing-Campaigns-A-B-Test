@@ -2,7 +2,7 @@
 
 # Fast Food Marketing Campaign A/B Test
 
-*NOTE: This project is part of **Sprint 4 of Module 3** in the Data Analytics program at **Turing College**. It focuses on analyzing an **A/B test** to evaluate the performance of different **fast food marketing campaigns** and provide **data-driven recommendations**.*
+*NOTE: This project is part of **Sprint 4 of Module 3** in the Data Analytics program at **Turing College**.*
 
 ---
 
@@ -11,12 +11,9 @@
 ### Goal
 A fast-food chain conducted an **A/B test** to evaluate three different **marketing campaigns** and determine which one **maximizes weekly sales**.
 
-## Dataset source 📂
-
-The data used in this A/B testing analysis comes from the **Fast Food Marketing Campaign A/B Test** dataset on Kaggle.  
-It contains sales performance data from different **fast food locations** running **three marketing campaigns**.
-
-[Click here for more informations about the dataset.](https://www.kaggle.com/datasets/chebotinaa/fast-food-marketing-campaign-ab-test)
+## Dataset source 🗃️
+The data used in this A/B testing analysis comes from the [Fast Food Marketing Campaign A/B Test](https://www.kaggle.com/datasets/chebotinaa/fast-food-marketing-campaign-ab-test) dataset on Kaggle.  
+It contains weekly sales performance data from the target **fast food locations** running one of the new **marketing campaigns** for 4 weeks.
 
 ### Columns from the original table:
 | Column | Meaning |
@@ -29,31 +26,29 @@ It contains sales performance data from different **fast food locations** runnin
 | *week* | one of four weeks when the promotions were run |
 | *SalesInThousands* | sales amount for a specific LocationID, Promotion, and week |
 
-### Methodology
-- **Data Aggregation**: Sales data grouped by `LocationID`, `PromotionID`.  
-- **Statistical Test**: Two-Sample T-Test *(α = 0.01)* to compare sales performance.  
-- **Hypothesis**:
-  - *H₀ (Null Hypothesis):* No difference between promotions.  
-  - *H₁ (Alternative Hypothesis):* At least one promotion performs better.
+## Methodology
+*(Step 1)* **Data aggregation on SQL** → count of location for each promotion, mean and standard deviation of their average weekly sales.  
+*(Step 2)* **Statistical test thourgh pairwise comparison** → Two-Sample T-Test *(α = 0.01)* to compare sales performance.
 
-### **Key Results**
+### Hypothesis
+  - *H₀ (Null Hypothesis)* → No difference between promotions.  
+  - *H₁ (Alternative Hypothesis)* → At least one promotion performs better.
+
+## Key results 💡
 Promotion 1 significantly outperformed Promotion 2 *(p-value < 0.01)*.  
 At the same time, there is no significant difference between Promotion 1 & 3 and Promotion 2 & 3 *(p-values > 0.01)*.  
 
-### **Business Recommendations** 🎯
+### Business recommendations
 - Prioritize Promotion 1 as the most effective campaign.  
 - Further test Promotion 3, as it performed similarly to Promotion 1.  
 - Discontinue Promotion 2, as it showed the weakest impact.  
 
 ---
 
-## Accessing the files 🗂️
+## Project files 🗂️
 
-To see the table after the SQL agreggation, please check this [spreadsheet.](https://docs.google.com/spreadsheets/d/1uzaTnv1j8Vdp53O7QhYAueHOPcxCsmyBEcuMi3ZdbG8/edit?usp=sharing), you will find as well the query to extract the data.
 
-Alternatively, download the file
-
-Finally, you can check the [final report.](https://docs.google.com/document/d/1SA5Cqi7pSfLWNQjXHarW7VgEZzhswX_WfzYuPrjdR4g/edit?usp=sharing)
+`Fast-Food_Extract_Data.sql` → SQL file to extract the data and organize it in multiple columns.
 
 ---
 
