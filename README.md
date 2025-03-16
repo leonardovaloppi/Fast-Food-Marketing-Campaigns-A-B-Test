@@ -15,17 +15,6 @@ A fast-food chain conducted an **A/B test** to evaluate three different **market
 The data used in this A/B testing analysis comes from the [Fast Food Marketing Campaign A/B Test](https://www.kaggle.com/datasets/chebotinaa/fast-food-marketing-campaign-ab-test) dataset on Kaggle.  
 It contains weekly sales performance data from the target **fast food locations** running one of the new **marketing campaigns** for 4 weeks.
 
-### Columns from the original table:
-| Column | Meaning |
-|--------|---------|
-| *MarketID* | unique identifier for market |
-| *MarketSize* | size of market area by sales |
-| *LocationID* | unique identifier for store location |
-| *AgeOfStore* | age of store in years |
-| *Promotion* | one of three promotions that were tested |
-| *week* | one of four weeks when the promotions were run |
-| *SalesInThousands* | sales amount for a specific LocationID, Promotion, and week |
-
 ## Methodology
 *(Step 1)* **Data aggregation on SQL** → computing the necesary statistics for the T-test: sample size, mean and standard deviation  
 *(Step 2)* **Statistical test thourgh pairwise comparison** → performing Two-Sample T-Test *(α = 0.01)* to compare sales performance using the query results
@@ -67,7 +56,9 @@ Alternatively, the final report is available on [Google Docs.](https://docs.goog
 
 ## More from Leonardo Valoppi 👨‍💻
 
-[Let's connect on LinkedIn!](https://linkedin.com/in/leonardo-valoppi)
+[LinkedIn](https://linkedin.com/in/leonardo-valoppi)
 
-[Look at my GitHub profile and continue to explore my portfolio.](https://github.com/leonardovaloppi)  
+[GitHub Profile](https://github.com/leonardovaloppi)  
+
+[Tableau Public](https://public.tableau.com/app/profile/leonardo.valoppi/vizzes)
 
